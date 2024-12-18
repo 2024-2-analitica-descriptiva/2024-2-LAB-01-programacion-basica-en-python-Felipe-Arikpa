@@ -6,7 +6,7 @@ utilizar pandas, numpy o scipy.
 """
 
 
-def pregunta_10(input_directory=r'C:\Users\arica\OneDrive\Analítica descriptiva\2024-2-LAB-01-programacion-basica-en-python-Felipe-Arikpa\files\input\data.csv'):
+def pregunta_10(input_directory=r'..\files\input\data.csv'):
     """
     Retorne una lista de tuplas contengan por cada tupla, la letra de la
     columna 1 y la cantidad de elementos de las columnas 4 y 5.

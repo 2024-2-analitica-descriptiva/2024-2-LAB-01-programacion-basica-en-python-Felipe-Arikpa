@@ -6,7 +6,7 @@ utilizar pandas, numpy o scipy.
 """
 
 
-def pregunta_06(input_directory=r'C:\Users\arica\OneDrive\Analítica descriptiva\2024-2-LAB-01-programacion-basica-en-python-Felipe-Arikpa\files\input\data.csv'):
+def pregunta_06(input_directory=r'..\files\input\data.csv'):
     """
     La columna 5 codifica un diccionario donde cada cadena de tres letras
     corresponde a una clave y el valor despues del caracter `:` corresponde al

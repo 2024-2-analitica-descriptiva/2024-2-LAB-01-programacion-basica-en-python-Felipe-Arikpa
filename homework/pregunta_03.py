@@ -6,7 +6,7 @@ utilizar pandas, numpy o scipy.
 """
 
 
-def pregunta_03(input_directory=r'C:\Users\arica\OneDrive\Analítica descriptiva\2024-2-LAB-01-programacion-basica-en-python-Felipe-Arikpa\files\input\data.csv'):
+def pregunta_03(input_directory=r'..\files\input\data.csv'):
     """
     Retorne la suma de la columna 2 por cada letra de la primera columna como
     una lista de tuplas (letra, suma) ordendas alfabeticamente.

@@ -6,7 +6,7 @@ utilizar pandas, numpy o scipy.
 """
 
 
-def pregunta_01(input_directory=r'C:\Users\arica\OneDrive\Analítica descriptiva\2024-2-LAB-01-programacion-basica-en-python-Felipe-Arikpa\files\input\data.csv'):
+def pregunta_01(input_directory=r'..\files\input\data.csv'):
     """
     Retorne la suma de la segunda columna.
     Rta/
