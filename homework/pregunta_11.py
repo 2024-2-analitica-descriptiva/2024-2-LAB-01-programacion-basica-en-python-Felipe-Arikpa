@@ -6,7 +6,7 @@ utilizar pandas, numpy o scipy.
 """
 
 
-def pregunta_11(input_directory=r'..\files\input\data.csv'):
+def pregunta_11(input_directory='files/input/data.csv'):
     """
     Retorne un diccionario que contengan la suma de la columna 2 para cada
     letra de la columna 4, ordenadas alfabeticamente.

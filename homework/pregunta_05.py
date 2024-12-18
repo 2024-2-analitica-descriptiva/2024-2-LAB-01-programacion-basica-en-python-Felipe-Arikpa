@@ -6,7 +6,7 @@ utilizar pandas, numpy o scipy.
 """
 
 
-def pregunta_05(input_directory=r'..\files\input\data.csv'):
+def pregunta_05(input_directory='files/input/data.csv'):
     """
     Retorne una lista de tuplas con el valor maximo y minimo de la columna 2
     por cada letra de la columa 1.

@@ -6,7 +6,7 @@ utilizar pandas, numpy o scipy.
 """
 
 
-def pregunta_09(input_directory=r'..\files\input\data.csv'):
+def pregunta_09(input_directory='files/input/data.csv'):
     """
     Retorne un diccionario que contenga la cantidad de registros en que
     aparece cada clave de la columna 5.

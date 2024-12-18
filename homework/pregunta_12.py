@@ -6,7 +6,7 @@ utilizar pandas, numpy o scipy.
 """
 
 
-def pregunta_12(input_directory=r'..\files\input\data.csv'):
+def pregunta_12(input_directory='files/input/data.csv'):
     """
     Genere un diccionario que contengan como clave la columna 1 y como valor
     la suma de los valores de la columna 5 sobre todo el archivo.
