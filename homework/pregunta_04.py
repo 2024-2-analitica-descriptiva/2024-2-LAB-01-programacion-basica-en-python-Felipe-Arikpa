@@ -6,7 +6,7 @@ utilizar pandas, numpy o scipy.
 """
 
 
-def pregunta_04():
+def pregunta_04(input_directory=r'C:\Users\arica\OneDrive\Analítica descriptiva\2024-2-LAB-01-programacion-basica-en-python-Felipe-Arikpa\files\input\data.csv'):
     """
     La columna 3 contiene una fecha en formato `YYYY-MM-DD`. Retorne la
     cantidad de registros por cada mes, tal como se muestra a continuación.
@@ -26,3 +26,23 @@ def pregunta_04():
      ('12', 3)]
 
     """
+
+    meses = []
+
+    import csv
+    with open(input_directory, mode='r') as file:
+        csv_reader = csv.reader(file, delimiter='\t')
+        for lines in csv_reader:
+            meses.append(lines[2][5:7])
+
+    meses_unicos = set(meses)
+
+    resultado = []
+
+    for mes in meses_unicos:
+        cantidad = sum(1 for x in meses if x == mes)
+        resultado.append((mes, cantidad))
+
+    resultado.sort()
+
+    return resultado

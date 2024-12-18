@@ -6,7 +6,7 @@ utilizar pandas, numpy o scipy.
 """
 
 
-def pregunta_06():
+def pregunta_06(input_directory=r'C:\Users\arica\OneDrive\Analítica descriptiva\2024-2-LAB-01-programacion-basica-en-python-Felipe-Arikpa\files\input\data.csv'):
     """
     La columna 5 codifica un diccionario donde cada cadena de tres letras
     corresponde a una clave y el valor despues del caracter `:` corresponde al
@@ -26,3 +26,25 @@ def pregunta_06():
      ('jjj', 5, 17)]
 
     """
+
+    valores_clave = {}
+
+    import csv
+    with open(input_directory, mode='r') as file:
+        csv_reader = csv.reader(file, delimiter='\t')
+        for lines in csv_reader:
+            diccionario = dict(pareja.split(":") for pareja in lines[4].split(","))
+            for clave, valor in diccionario.items():
+                valor = int(valor)
+                if clave not in valores_clave:
+                    valores_clave[clave] = {"min": valor, "max": valor}
+                else:
+                    if valor < valores_clave[clave]["min"]:
+                        valores_clave[clave]["min"] = valor
+                    if valor > valores_clave[clave]["max"]:
+                        valores_clave[clave]["max"] = valor
+
+    resultado = [(clave, valores_clave[clave]["min"], valores_clave[clave]["max"]) for clave in valores_clave]
+    resultado.sort()
+
+    return resultado

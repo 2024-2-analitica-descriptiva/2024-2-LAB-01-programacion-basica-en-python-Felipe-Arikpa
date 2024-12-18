@@ -6,7 +6,7 @@ utilizar pandas, numpy o scipy.
 """
 
 
-def pregunta_07():
+def pregunta_07(input_directory=r'C:\Users\arica\OneDrive\Analítica descriptiva\2024-2-LAB-01-programacion-basica-en-python-Felipe-Arikpa\files\input\data.csv'):
     """
     Retorne una lista de tuplas que asocien las columnas 0 y 1. Cada tupla
     contiene un valor posible de la columna 2 y una lista con todas las letras
@@ -25,3 +25,21 @@ def pregunta_07():
      (9, ['A', 'B', 'E', 'A', 'A', 'C'])]
 
     """
+
+    datos = []
+
+    import csv
+    with open(input_directory, mode='r') as file:
+        csv_reader = csv.reader(file, delimiter='\t')
+        for lines in csv_reader:
+            datos.append(lines[0:2])
+
+    numeros_unicos = set([int(dato[1]) for dato in datos])
+
+    resultado = []
+
+    for numero in sorted(numeros_unicos):
+        letras = [x[0] for x in datos if int(x[1]) == numero]
+        resultado.append((numero, letras))
+
+    return resultado

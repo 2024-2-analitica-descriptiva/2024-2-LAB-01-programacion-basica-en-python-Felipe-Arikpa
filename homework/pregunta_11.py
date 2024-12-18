@@ -6,7 +6,7 @@ utilizar pandas, numpy o scipy.
 """
 
 
-def pregunta_11():
+def pregunta_11(input_directory=r'C:\Users\arica\OneDrive\Analítica descriptiva\2024-2-LAB-01-programacion-basica-en-python-Felipe-Arikpa\files\input\data.csv'):
     """
     Retorne un diccionario que contengan la suma de la columna 2 para cada
     letra de la columna 4, ordenadas alfabeticamente.
@@ -16,3 +16,21 @@ def pregunta_11():
 
 
     """
+
+    suma_por_letra = {}
+
+    import csv
+    with open(input_directory, mode='r') as file:
+        csv_reader = csv.reader(file, delimiter='\t')
+        for lines in csv_reader:
+            valor = int(lines[1])
+            letras = lines[3].split(',')
+            for letra in letras:
+                if letra in suma_por_letra:
+                    suma_por_letra[letra] += valor
+                else:
+                    suma_por_letra[letra] = valor
+
+    suma_por_letra = dict(sorted(suma_por_letra.items()))
+
+    return suma_por_letra

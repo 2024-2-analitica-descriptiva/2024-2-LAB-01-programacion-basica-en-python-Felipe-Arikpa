@@ -6,7 +6,7 @@ utilizar pandas, numpy o scipy.
 """
 
 
-def pregunta_08():
+def pregunta_08(input_directory=r'C:\Users\arica\OneDrive\Analítica descriptiva\2024-2-LAB-01-programacion-basica-en-python-Felipe-Arikpa\files\input\data.csv'):
     """
     Genere una lista de tuplas, donde el primer elemento de cada tupla
     contiene  el valor de la segunda columna; la segunda parte de la tupla
@@ -27,3 +27,21 @@ def pregunta_08():
      (9, ['A', 'B', 'C', 'E'])]
 
     """
+
+    datos = []
+
+    import csv
+    with open(input_directory, mode='r') as file:
+        csv_reader = csv.reader(file, delimiter='\t')
+        for lines in csv_reader:
+            datos.append(lines[0:2])
+
+    numeros_unicos = set([int(dato[1]) for dato in datos])
+
+    resultado = []
+
+    for numero in sorted(numeros_unicos):
+        letras = set([x[0] for x in datos if int(x[1]) == numero])
+        resultado.append((numero, sorted(letras)))
+
+    return resultado

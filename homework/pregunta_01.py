@@ -6,11 +6,19 @@ utilizar pandas, numpy o scipy.
 """
 
 
-def pregunta_01():
+def pregunta_01(input_directory=r'C:\Users\arica\OneDrive\Analítica descriptiva\2024-2-LAB-01-programacion-basica-en-python-Felipe-Arikpa\files\input\data.csv'):
     """
     Retorne la suma de la segunda columna.
-
     Rta/
     214
-
     """
+
+    suma_2col = 0
+
+    import csv
+    with open(input_directory, mode='r') as file:
+        csv_reader = csv.reader(file, delimiter='\t')
+        for lines in csv_reader:
+            suma_2col += int(lines[1])
+
+    return suma_2col
